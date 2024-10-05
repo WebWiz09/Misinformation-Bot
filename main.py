@@ -3,7 +3,7 @@ from groq import Groq
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/fact-check": {"origins": "https://discernai.vercel.app/main.html"}})
+CORS(app, resources={r"/fact-check": {"origins": "https://discernai.vercel.app/"}})
 
 client = Groq(
     api_key="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",
@@ -13,7 +13,7 @@ client = Groq(
 def home():
     return "Welcome to the Fact Check API! Use the /fact-check endpoint to check facts."
     
-@app.route('https://misinformation-bot.onrender.com/fact-check', methods=['GET'])
+@app.route('/fact-check', methods=['POST'])
 def fact_check():
     data = request.json
     user_input = data.get('text', '')
