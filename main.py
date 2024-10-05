@@ -9,6 +9,9 @@ client = Groq(
     api_key="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",
 )
 
+@app.route('/')
+def home():
+    return "Welcome to the Fact Check API! Use the /fact-check endpoint to check facts."
 @app.route('/fact-check', methods=['POST'])
 def fact_check():
     data = request.json
