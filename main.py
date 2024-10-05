@@ -13,7 +13,7 @@ client = Groq(
 def home():
     return "Welcome to the Fact Check API! Use the /fact-check endpoint to check facts."
     
-@app.route('/fact-check', methods=['POST'])
+@app.route('https://misinformation-bot.onrender.com/fact-check', methods=['GET'])
 def fact_check():
     data = request.json
     user_input = data.get('text', '')
