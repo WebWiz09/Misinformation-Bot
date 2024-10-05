@@ -12,6 +12,7 @@ client = Groq(
 @app.route('/')
 def home():
     return "Welcome to the Fact Check API! Use the /fact-check endpoint to check facts."
+    
 @app.route('/fact-check', methods=['POST'])
 def fact_check():
     data = request.json
@@ -58,4 +59,4 @@ Provide a fact-check analysis in the following format:
     return jsonify(structured_response)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
