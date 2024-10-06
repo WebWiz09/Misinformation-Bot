@@ -9,3 +9,9 @@
     "watch": "tailwindcss build style.css -o dist/styles.css --watch"
   }
 }
+{
+  "engines": {
+    "node": ">=14.x"
+  }
+}
+
